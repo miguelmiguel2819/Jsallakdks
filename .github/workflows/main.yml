@@ -13,7 +13,7 @@ jobs:
           distribution: temurin
           java-version: 17
       - run: |
-          unzip -q chess-helper-expo-fixed.zip -d proj
+          unzip -q "chess-helper-expo-fixed (1).zip" -d proj
           cd proj
           rm -f bun.lock bun.lockb
           bun install
