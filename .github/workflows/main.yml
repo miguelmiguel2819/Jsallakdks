@@ -15,6 +15,7 @@ jobs:
       - run: |
           unzip -q chess-helper-v2.zip -d proj
           cd proj
+          sed -i 's|if (cnt\[k\] > 0) m\[k\] /= cnt\[k\]|if (cnt[k] > 0) { m[k] = m[k] / cnt[k] }|' modules/chess-helper-native/android/src/main/java/ai/venice/chesshelper/nativemod/BoardRecognizer.kt
           rm -f bun.lock bun.lockb
           bun install
           bunx expo prebuild --platform android --no-install
