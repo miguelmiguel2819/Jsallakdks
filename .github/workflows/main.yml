@@ -13,9 +13,8 @@ jobs:
           distribution: temurin
           java-version: 17
       - run: |
-          unzip -q "chess-helper-expo-fixed (1).zip" -d proj
+          unzip -q chess-helper-v2.zip -d proj
           cd proj
-          sed -i 's/?: return@AsyncFunction$/?: return@AsyncFunction null/' modules/chess-helper-native/android/src/main/java/ai/venice/chesshelper/nativemod/ChessHelperModule.kt
           rm -f bun.lock bun.lockb
           bun install
           bunx expo prebuild --platform android --no-install
